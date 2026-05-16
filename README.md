@@ -19,7 +19,6 @@ Trong kỷ nguyên bùng nổ thông tin, tin giả (Fake News) lan truyền tr�
 ## 📂 2. Cấu trúc thư mục dự án
 Thư mục gốc được tổ chức đồng bộ và khoa học trên Google Drive / GitHub như sau:
 
-```text
 FakeNewsDetection_Project/
 │
 ├── Demo_App.ipynb          # File Notebook chính cấu hình giao diện web tương tác Gradio
