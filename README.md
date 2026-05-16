@@ -58,90 +58,32 @@ FakeNewsDetection_Project/
 │   └── Word2Vec_SVM.ipynb
 │
 └── Preprocessing/          # Các script tiền xử lý dữ liệu và làm sạch văn bản
-🧠 3. Kiến trúc hệ thống & Phương pháp tiếp cậnHệ thống xử lý thông tin đi qua đường ống (Pipeline) 3 giai đoạn:
+---
+## 🧠 **3. Kiến trúc hệ thống & Phương pháp tiếp cậnHệ thống xử lý thông tin đi qua đường ống (Pipeline) 3 giai đoạn:**
 - Giai đoạn 1: Tiền xử lý (Preprocessing)Chuẩn hóa văn bản (chuyển chữ thường, xóa ký tự đặc biệt, đường dẫn URL, xóa từ dừng - stopwords).Tách từ (Tokenization) cấu trúc câu văn bài báo.
 - Giai đoạn 2: Trích xuất đặc trưng (Embedding)Mô hình tĩnh (Word2Vec): Huấn luyện biểu diễn từ dựa trên ngữ cảnh cục bộ bằng Skip-gram/CBOW, tính trung bình vector để đại diện cho toàn bộ văn bản.Mô hình động (BERT): Sử dụng BertModel và BertTokenizer trích xuất vector tầng ẩn cuối cùng (cls token) để giữ trọn vẹn ngữ nghĩa ngữ cảnh hai chiều.
 - Giai đoạn 3: Phân loại & Tích hợp tổ hợp (Classification & Ensemble)Hệ thống cho phép người dùng tùy chọn linh hoạt cấu hình chạy trên giao diện:Mô hình đơn lẻ: Chạy độc lập một trong 4 thuật toán: Naive Bayes, SVM, RNN hoặc LSTM.Mô hình tổ hợp (Ensemble): Lấy giá trị xác suất (Probability) dự đoán từ hai thuật toán khác nhau, thực hiện tính toán hiệu chuẩn toán học:
 <img width="390" height="69" alt="image" src="https://github.com/user-attachments/assets/d05a2764-ce77-42d2-9020-6a6f612b5b31" />
-📊 4. Kết quả thực nghiệm (Tổng hợp từ Tiểu luận)Qua quá trình thực nghiệm diện rộng trên tập dữ liệu kiểm thử, hiệu năng của hệ thống tuân thủ nghiêm ngặt các quy luật toán học và bản chất thuật toán:
+--
+## 📊 4. Kết quả thực nghiệm (Tổng hợp từ Tiểu luận)Qua quá trình thực nghiệm diện rộng trên tập dữ liệu kiểm thử, hiệu năng của hệ thống tuân thủ nghiêm ngặt các quy luật toán học và bản chất thuật toán:
 Về kỹ thuật Embedding: Nhánh cấu hình BERT cho kết quả vượt trội rõ rệt so với Word2Vec nhờ khả năng nắm bắt ngữ cảnh động của từ.
 Về thuật toán phân loại:
 - LSTM đạt độ chính xác cao nhất (vùng tiệm cận 96% với BERT) nhờ cơ chế cổng nhớ dài hạn, giải quyết triệt để vấn đề mất mát đạo hàm.
 - RNN xếp thứ hai với độ nhạy thông tin chuỗi cao.
 - SVM đạt mức độ phân tách biên phân loại ổn định cao ở các bài toán tuyến tính.
 - Naive Bayes hoạt động dựa trên giả định độc lập lập điều kiện, cho tốc độ xử lý cực nhanh nhưng độ tin cậy thấp hơn các mô hình học sâu.
-
-🚀 5. Hướng dẫn cài đặt & Khởi chạy ứng dụngYêu cầu môi trườngPython >= 3.8Google Colab hoặc Máy tính cá nhân có hỗ trợ GPU (khuyên dùng để chạy BERT).Cài đặt thư việnCài đặt toàn bộ các gói thư viện phụ thuộc bằng lệnh:Bashpip install -r requirements.txt
+---
+## 🚀 5. Hướng dẫn cài đặt & Khởi chạy ứng dụngYêu cầu môi trườngPython >= 3.8Google Colab hoặc Máy tính cá nhân có hỗ trợ GPU (khuyên dùng để chạy BERT).Cài đặt thư việnCài đặt toàn bộ các gói thư viện phụ thuộc bằng lệnh:Bashpip install -r requirements.txt
 Khởi chạy Giao diện kiểm thử (Gradio UI)Bạn tiến hành chạy ô Cell cuối trong file Demo_App.ipynb hoặc chạy trực tiếp file script bằng lệnh Terminal:Bashpython app.py
 Hệ thống sẽ khởi tạo một máy chủ Web cục bộ kèm theo một đường link công khai dạng https://xxxx.gradio.live.🔧 Hướng dẫn trải nghiệm giao diện:
 - Bước 1: Lựa chọn công cụ nhúng từ mong muốn tại ô 1. Chọn Embedding Tool (Word2Vec hoặc BERT).
 - Bước 2: Chọn thuật toán tại ô 2. Thuật toán phân loại 1.
 - Bước 3: Chọn thuật toán thứ hai tại ô 3. Thuật toán phân loại 2 để kích hoạt cơ chế bầu chọn tích hợp. Nếu muốn chạy mô hình đơn lẻ, hãy để ô này ở trạng thái None.
 - Bước 4: Dán nội dung bài báo cần phân tích vào ô văn bản và bấm 🚀 Dự đoán. Hệ thống sẽ xuất ra kết luận cuối cùng cùng bảng đối chiếu hiệu năng đơn lẻ trực quan.
-
-👤6. Thông tin tác giả & Bản quyền
+---
+## 👤6. Thông tin tác giả & Bản quyền
 - Tác giả: Nguyễn Văn Minh
 - Mã số sinh viên: 4651050158
 - Học phần: Nhập môn Xử lý ngôn ngữ tự nhiên (NLP)
 - Dự án được xây dựng và chia sẻ với mục đích học tập, nghiên cứu khoa học phi thương mại.
-## 🧠 3. Kiến trúc hệ thống & Phương pháp tiếp cận
 
-Hệ thống xử lý thông tin đi qua đường ống (Pipeline) 3 giai đoạn liền mạch:
-
-* **Giai đoạn 1: Tiền xử lý (Preprocessing)**
-    * Chuẩn hóa văn bản bằng cách chuyển toàn bộ sang chữ thường.
-    * Xóa các ký tự đặc biệt, các đường dẫn URL và loại bỏ các từ dừng (stopwords).
-    * Tiến hành tách từ (Tokenization) để cấu trúc hóa câu văn của bài báo.
-
-* **Giai đoạn 2: Trích xuất đặc trưng (Embedding)**
-    * *Mô hình tĩnh (Word2Vec):* Huấn luyện biểu diễn từ dựa trên ngữ cảnh cục bộ bằng Skip-gram/CBOW, tính trung bình vector để đại diện cho toàn bộ văn bản.
-    * *Mô hình động (BERT):* Sử dụng `BertModel` và `BertTokenizer` trích xuất vector tầng ẩn cuối cùng (cls token) để giữ trọn vẹn ngữ nghĩa ngữ cảnh hai chiều.
-
-* **Giai đoạn 3: Phân loại & Tích hợp tổ hợp (Classification & Ensemble)**
-    * *Cấu hình đơn lẻ:* Chạy độc lập một trong 4 thuật toán: Naive Bayes, SVM, RNN hoặc LSTM.
-    * *Cấu hình tổ hợp (Ensemble):* Lấy giá trị xác suất (Probability) dự đoán từ hai thuật toán khác nhau, thực hiện tính toán hiệu chuẩn toán học theo công thức lấy trung bình cộng để tối ưu hóa độ chính xác:
-        
-        $$\text{Final Probability} = \frac{P(\text{Model}_1) + P(\text{Model}_2)}{2}$$
-## 📊 4. Kết quả thực nghiệm (Tổng hợp từ Tiểu luận)
-
-Qua quá trình thực nghiệm diện rộng trên tập dữ liệu kiểm thử, hiệu năng của hệ thống tuân thủ nghiêm ngặt các quy luật toán học và bản chất thuật toán:
-
-* **Về kỹ thuật Embedding:** Nhánh cấu hình **BERT** cho kết quả vượt trội rõ rệt so với **Word2Vec** nhờ khả năng nắm bắt ngữ cảnh động và quan hệ hai chiều của từ trong câu văn.
-* **Về thuật toán phân loại:** * *Mô hình LSTM:* Đạt độ chính xác cao nhất (vùng tiệm cận 96% khi kết hợp với BERT) nhờ cơ chế các cổng nhớ dài hạn, giải quyết triệt để vấn đề mất mát đạo hàm trên văn bản dài.
-    * *Mô hình RNN:* Xếp vị trí thứ hai với độ nhạy thông tin chuỗi thời gian ở mức khá tốt.
-    * *Mô hình SVM:* Đạt mức độ phân tách biên ổn định, phù hợp với các đặc trưng tuyến tính phẳng.
-    * *Mô hình Naive Bayes:* Hoạt động dựa trên giả định độc lập điều kiện, cho tốc độ tính toán cực nhanh nhưng độ tin cậy thấp hơn các mô hình học sâu (Deep Learning).
-
----
-
-## 🚀 5. Hướng dẫn cài đặt & Khởi chạy ứng dụng
-
-Hệ thống yêu cầu môi trường cài đặt cơ bản chạy trên nền tảng Python từ phiên bản 3.8 trở lên (Khuyên dùng môi trường Google Colab để tận dụng miễn phí phần cứng GPU khi chạy nhánh BERT).
-
-* **Bước 1: Cài đặt các gói thư viện phụ thuộc**
-    * Mở cửa sổ dòng lệnh (Terminal/Prompt) và chạy câu lệnh sau để tự động cài đặt tất cả thư viện có trong file `requirements.txt`:
-    ```bash
-    pip install -r requirements.txt
-    ```
-* **Bước 2: Kích hoạt giao diện ứng dụng (Gradio UI)**
-    * Bạn có thể khởi chạy trực tiếp file mã nguồn bằng lệnh hệ thống:
-    ```bash
-    python app.py
-    ```
-    * Hệ thống sẽ thiết lập một máy chủ Web và cung cấp một đường link công khai có đuôi dạng `https://xxxx.gradio.live` để bạn chia sẻ cho thầy cô hoặc bạn bè cùng trải nghiệm.
-* **Bước 3: Trải nghiệm thực nghiệm trên giao diện**
-    1. Lựa chọn công cụ nhúng từ mong muốn tại ô `1. Chọn Embedding Tool` (Word2Vec hoặc BERT).
-    2. Chọn thuật toán phân loại cốt lõi tại ô `2. Thuật toán phân loại 1`.
-    3. *Tùy chọn Ensemble:* Nếu muốn kích hoạt cơ chế tích hợp học tổ hợp, bạn chọn tiếp thuật toán thứ hai tại ô `3. Thuật toán phân loại 2`. Nếu chỉ muốn chạy mô hình đơn lẻ thông thường, hãy giữ ô này ở trạng thái `None`.
-    4. Dán nội dung bài báo cần kiểm tra vào ô văn bản và bấm **🚀 KÍCH HOẠT PHÂN TÍCH** để nhận kết quả phân tích độ tin cậy kèm bảng xếp hạng đơn lẻ trực quan.
-
----
-
-## 👤 6. Thông tin tác giả & Bản quyền
-
-Dự án này được nghiên cứu, phát triển và cấu hình hoàn thiện bởi:
-
-* **Họ và tên sinh viên:** Nguyễn Văn Minh
-* **Mã số sinh viên (MSSV):** 4651050158
-* **Học phần đào tạo:** Nhập môn Xử lý ngôn ngữ tự nhiên (NLP)
-* **Quy chế bản quyền:** *Mã nguồn dự án được chia sẻ công khai với mục đích học tập, tham khảo học thuật và nghiên cứu khoa học phi thương mại.*
