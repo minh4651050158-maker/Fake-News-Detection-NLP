@@ -58,7 +58,7 @@ FakeNewsDetection_Project/
 │   └── Word2Vec_SVM.ipynb
 │
 └── Preprocessing/          # Các script tiền xử lý dữ liệu và làm sạch văn bản
----
+```
 🧠 3. Kiến trúc hệ thống & Phương pháp tiếp cận
 Hệ thống xử lý thông tin đi qua đường ống (Pipeline) 3 giai đoạn liền mạch và khép kín:
 
