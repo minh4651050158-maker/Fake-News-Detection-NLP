@@ -1,0 +1,7 @@
+
+- svm_classifier.pkl: Accuracy 0.9667, dùng Word2Vec 100D, Kernel Linear.
+- bert_rnn_model.pt: Accuracy 0.9633, dùng BERT-base + SimpleRNN.
+- bert_svm_classifier.pkl: Accuracy 0.9925, dùng BERT-base-uncased (CLS token), SVM Linear.
+- w2v_lstm_model.h5: Accuracy 0.9130, dùng Word2Vec 100D + LSTM.
+- w2v_rnn_model.h5: Accuracy 0.6260, dùng Word2Vec 100D + SimpleRNN.
+- bert_lstm_model.pt: Accuracy 0.9833, dùng BERT-base + LSTM.
