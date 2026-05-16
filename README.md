@@ -72,10 +72,10 @@ Hệ thống xử lý thông tin đi qua đường ống (Pipeline) 3 giai đo�
 Qua quá trình thực nghiệm diện rộng trên tập dữ liệu kiểm thử, hiệu năng của hệ thống tuân thủ nghiêm ngặt các quy luật toán học và bản chất thuật toán:
 - Về kỹ thuật Embedding: Nhánh cấu hình BERT cho kết quả vượt trội rõ rệt so với Word2Vec nhờ khả năng nắm bắt ngữ cảnh động của từ.
 - Về thuật toán phân loại:
-  *LSTM đạt độ chính xác cao nhất (vùng tiệm cận 96% với BERT) nhờ cơ chế cổng nhớ dài hạn, giải quyết triệt để vấn đề mất mát đạo hàm.
-  *RNN xếp thứ hai với độ nhạy thông tin chuỗi cao.
-  *SVM đạt mức độ phân tách biên phân loại ổn định cao ở các bài toán tuyến tính.
-  *Naive Bayes hoạt động dựa trên giả định độc lập lập điều kiện, cho tốc độ xử lý cực nhanh nhưng độ tin cậy thấp hơn các mô hình học sâu.
+  * LSTM đạt độ chính xác cao nhất (vùng tiệm cận 96% với BERT) nhờ cơ chế cổng nhớ dài hạn, giải quyết triệt để vấn đề mất mát đạo hàm.
+  * RNN xếp thứ hai với độ nhạy thông tin chuỗi cao.
+  * SVM đạt mức độ phân tách biên phân loại ổn định cao ở các bài toán tuyến tính.
+  * Naive Bayes hoạt động dựa trên giả định độc lập lập điều kiện, cho tốc độ xử lý cực nhanh nhưng độ tin cậy thấp hơn các mô hình học sâu.
 ## 🚀 5. Hướng dẫn cài đặt & Khởi chạy ứng dụng
 **Yêu cầu môi trường**
 *Python >= 3.8
