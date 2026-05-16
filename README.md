@@ -18,7 +18,7 @@ Trong kỷ nguyên bùng nổ thông tin, tin giả (Fake News) lan truyền tr�
 
 ## 📂 2. Cấu trúc thư mục dự án
 Thư mục gốc được tổ chức đồng bộ và khoa học trên Google Drive / GitHub như sau:
-
+```text
 FakeNewsDetection_Project/
 │
 ├── Demo_App.ipynb          # File Notebook chính cấu hình giao diện web tương tác Gradio
@@ -58,6 +58,15 @@ FakeNewsDetection_Project/
 │
 └── Preprocessing/          # Các script tiền xử lý dữ liệu và làm sạch văn bản
 ```text
+---
+---
+
+## 📌 1. Giới thiệu bài toán & Mục tiêu cứu
+Trong kỷ nguyên bùng nổ thông tin, tin giả (Fake News) lan truyền trên các mạng xã hội gây ra những hệ lụy nghiêm trọng cho đời sống xã hội và an ninh thông tin. Dự án này được thực hiện nhằm:
+* Xây dựng mô hình phân loại tin tức tự động (Nhãn: **REAL** hoặc **FAKE**).
+* Đánh giá thực nghiệm sức mạnh của đặc trưng ngữ nghĩa tĩnh (**Word2Vec**) so với đặc trưng ngữ cảnh động (**BERT**).
+* Ứng dụng cơ chế **Ensemble (Học tổ hợp)** theo phương pháp trung bình trọng số xác xuất để tối ưu hóa độ tin cậy của dự đoán cuối cùng, giảm thiểu sai số của các mô hình đơn lẻ.
+
 ---
 ## 🧠 **3. Kiến trúc hệ thống & Phương pháp tiếp cậnHệ thống xử lý thông tin đi qua đường ống (Pipeline) 3 giai đoạn:**
 - Giai đoạn 1: Tiền xử lý (Preprocessing)Chuẩn hóa văn bản (chuyển chữ thường, xóa ký tự đặc biệt, đường dẫn URL, xóa từ dừng - stopwords).Tách từ (Tokenization) cấu trúc câu văn bài báo.
