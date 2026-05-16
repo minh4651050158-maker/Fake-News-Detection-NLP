@@ -64,28 +64,40 @@ Hệ thống xử lý thông tin đi qua đường ống (Pipeline) 3 giai đo�
 * Giai đoạn 1: Tiền xử lý (Preprocessing)Chuẩn hóa văn bản (chuyển chữ thường, xóa ký tự đặc biệt, đường dẫn URL, xóa từ dừng - stopwords).Tách từ (Tokenization) cấu trúc câu văn bài báo.
 * Giai đoạn 2: Trích xuất đặc trưng (Embedding)Mô hình tĩnh (Word2Vec): Huấn luyện biểu diễn từ dựa trên ngữ cảnh cục bộ bằng Skip-gram/CBOW, tính trung bình vector để đại diện cho toàn bộ văn bản.Mô hình động (BERT): Sử dụng BertModel và BertTokenizer trích xuất vector tầng ẩn cuối cùng (cls token) để giữ trọn vẹn ngữ nghĩa ngữ cảnh hai chiều.
 * Giai đoạn 3: Phân loại & Tích hợp tổ hợp (Classification & Ensemble)Hệ thống cho phép người dùng tùy chọn linh hoạt cấu hình chạy trên giao diện:
-** Mô hình đơn lẻ: Chạy độc lập một trong 4 thuật toán: Naive Bayes, SVM, RNN hoặc LSTM.
-** Mô hình tổ hợp (Ensemble): Lấy giá trị xác suất (Probability) dự đoán từ hai thuật toán khác nhau, thực hiện tính toán hiệu chuẩn toán học:
+  - Mô hình đơn lẻ: Chạy độc lập một trong 4 thuật toán: Naive Bayes, SVM, RNN hoặc LSTM.
+  - Mô hình tổ hợp (Ensemble): Lấy giá trị xác suất (Probability) dự đoán từ hai thuật toán khác nhau, thực hiện tính toán hiệu chuẩn toán học:
   <img width="579" height="84" alt="image" src="https://github.com/user-attachments/assets/e9db13f8-05bc-414b-bd9b-f9d841b76233" />
 
 ## 📊 4. Kết quả thực nghiệm (Tổng hợp từ Tiểu luận)
 Qua quá trình thực nghiệm diện rộng trên tập dữ liệu kiểm thử, hiệu năng của hệ thống tuân thủ nghiêm ngặt các quy luật toán học và bản chất thuật toán:
-Về kỹ thuật Embedding: Nhánh cấu hình BERT cho kết quả vượt trội rõ rệt so với Word2Vec nhờ khả năng nắm bắt ngữ cảnh động của từ.
-Về thuật toán phân loại:
-LSTM đạt độ chính xác cao nhất (vùng tiệm cận 96% với BERT) nhờ cơ chế cổng nhớ dài hạn, giải quyết triệt để vấn đề mất mát đạo hàm.
-RNN xếp thứ hai với độ nhạy thông tin chuỗi cao.
-SVM đạt mức độ phân tách biên phân loại ổn định cao ở các bài toán tuyến tính.
-Naive Bayes hoạt động dựa trên giả định độc lập lập điều kiện, cho tốc độ xử lý cực nhanh nhưng độ tin cậy thấp hơn các mô hình học sâu.
+- Về kỹ thuật Embedding: Nhánh cấu hình BERT cho kết quả vượt trội rõ rệt so với Word2Vec nhờ khả năng nắm bắt ngữ cảnh động của từ.
+- Về thuật toán phân loại:
+  *LSTM đạt độ chính xác cao nhất (vùng tiệm cận 96% với BERT) nhờ cơ chế cổng nhớ dài hạn, giải quyết triệt để vấn đề mất mát đạo hàm.
+  *RNN xếp thứ hai với độ nhạy thông tin chuỗi cao.
+  *SVM đạt mức độ phân tách biên phân loại ổn định cao ở các bài toán tuyến tính.
+  *Naive Bayes hoạt động dựa trên giả định độc lập lập điều kiện, cho tốc độ xử lý cực nhanh nhưng độ tin cậy thấp hơn các mô hình học sâu.
 ## 🚀 5. Hướng dẫn cài đặt & Khởi chạy ứng dụng
-Yêu cầu môi trườngPython >= 3.8Google Colab hoặc Máy tính cá nhân có hỗ trợ GPU (khuyên dùng để chạy BERT).Cài đặt thư việnCài đặt toàn bộ các gói thư viện phụ thuộc bằng lệnh:Bashpip install -r requirements.txt
-Khởi chạy Giao diện kiểm thử (Gradio UI)Bạn tiến hành chạy ô Cell cuối trong file Demo_App.ipynb hoặc chạy trực tiếp file script bằng lệnh Terminal:Bashpython app.py
-Hệ thống sẽ khởi tạo một máy chủ Web cục bộ kèm theo một đường link công khai dạng https://xxxx.gradio.live.🔧 Hướng dẫn trải nghiệm giao diện:
-Bước 1: Lựa chọn công cụ nhúng từ mong muốn tại ô 1. Chọn Embedding Tool (Word2Vec hoặc BERT).
-Bước 2: Chọn thuật toán tại ô 2. Thuật toán phân loại 1.
-Bước 3 (Tùy chọn Ensemble): Chọn thuật toán thứ hai tại ô 3. Thuật toán phân loại 2 để kích hoạt cơ chế bầu chọn tích hợp. Nếu muốn chạy mô hình đơn lẻ, hãy để ô này ở trạng thái None.
-Bước 4: Dán nội dung bài báo cần phân tích vào ô văn bản và bấm 🚀 KÍCH HOẠT PHÂN TÍCH. Hệ thống sẽ xuất ra kết luận cuối cùng cùng bảng đối chiếu hiệu năng đơn lẻ trực quan.
+**Yêu cầu môi trường**
+*Python >= 3.8
+*Google Colab hoặc Máy tính cá nhân có hỗ trợ GPU (khuyên dùng để chạy BERT).
+**Cài đặt thư viện**
+Cài đặt toàn bộ các gói thư viện phụ thuộc bằng lệnh:
+```text
+pip install -r requirements.txt
+```
+**Khởi chạy Giao diện kiểm thử (Gradio UI)**
+Bạn tiến hành chạy ô Cell cuối trong file **Demo_App.ipynb** hoặc chạy trực tiếp file script bằng lệnh Terminal:
+```text
+python app.py
+```
+Hệ thống sẽ khởi tạo một máy chủ Web cục bộ kèm theo một đường link công khai dạng https://xxxx.gradio.live.
+**🔧 Hướng dẫn trải nghiệm giao diện:**
+**Bước 1:** Lựa chọn công cụ nhúng từ mong muốn tại ô 1. Chọn Embedding Tool (Word2Vec hoặc BERT).
+**Bước 2:** Chọn thuật toán tại ô 2. Thuật toán phân loại 1.
+**Bước 3:**(Tùy chọn Ensemble): Chọn thuật toán thứ hai tại ô 3. Thuật toán phân loại 2 để kích hoạt cơ chế bầu chọn tích hợp. Nếu muốn chạy mô hình đơn lẻ, hãy để ô này ở trạng thái None.
+**Bước 4:** Dán nội dung bài báo cần phân tích vào ô văn bản và bấm 🚀 KÍCH HOẠT PHÂN TÍCH. Hệ thống sẽ xuất ra kết luận cuối cùng cùng bảng đối chiếu hiệu năng đơn lẻ trực quan.
 ## 👤 6. Thông tin tác giả & Bản quyền
-Tác giả: Nguyễn Văn Minh
-Mã số sinh viên: 4651050158
-Học phần: Nhập môn Xử lý ngôn ngữ tự nhiên (NLP)
+**Tác giả:** Nguyễn Văn Minh
+**Mã số sinh viên:** 4651050158
+**Học phần:** Nhập môn Xử lý ngôn ngữ tự nhiên (NLP)
 Dự án được xây dựng và chia sẻ với mục đích học tập, nghiên cứu khoa học phi thương mại.
