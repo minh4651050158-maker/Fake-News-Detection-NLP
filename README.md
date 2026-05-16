@@ -91,10 +91,10 @@ pip install -r requirements.txt
 python app.py
 ```
 - Hệ thống sẽ khởi tạo một máy chủ Web cục bộ kèm theo một đường link công khai dạng https://xxxx.gradio.live.
-**🔧 Hướng dẫn trải nghiệm giao diện:**
-- **Bước 1:** Lựa chọn công cụ nhúng từ mong muốn tại ô 1. Chọn Embedding Tool (Word2Vec hoặc BERT).
-- **Bước 2:** Chọn thuật toán tại ô 2. Thuật toán phân loại 1.
-- **Bước 3:**(Tùy chọn Ensemble): Chọn thuật toán thứ hai tại ô 3. Thuật toán phân loại 2 để kích hoạt cơ chế bầu chọn tích hợp. Nếu muốn chạy mô hình đơn lẻ, hãy để ô này ở trạng thái None.
+- **🔧 Hướng dẫn trải nghiệm giao diện:**
+  * **Bước 1:** Lựa chọn công cụ nhúng từ mong muốn tại ô 1. Chọn Embedding Tool (Word2Vec hoặc BERT).
+  * **Bước 2:** Chọn thuật toán tại ô 2. Thuật toán phân loại 1.
+  * **Bước 3:**(Tùy chọn Ensemble): Chọn thuật toán thứ hai tại ô 3. Thuật toán phân loại 2 để kích hoạt cơ chế bầu chọn tích hợp. Nếu muốn chạy mô hình đơn lẻ, hãy để ô này ở trạng thái None.
 - **Bước 4:** Dán nội dung bài báo cần phân tích vào ô văn bản và bấm 🚀 KÍCH HOẠT PHÂN TÍCH. Hệ thống sẽ xuất ra kết luận cuối cùng cùng bảng đối chiếu hiệu năng đơn lẻ trực quan.
 ## 👤 6. Thông tin tác giả & Bản quyền
 - **Tác giả:** Nguyễn Văn Minh
